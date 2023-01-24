@@ -972,6 +972,8 @@ body {
 
 
 .bannerbox{
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     width: 30%;
     height: 10vh;
