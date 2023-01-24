@@ -31,7 +31,7 @@ p {
     font-size: 16px;
     color: #465b52;
     margin: 15px 0 20px 0;
-}`
+}
 
 body {
     width: 100%;
@@ -40,6 +40,12 @@ body {
 /*Main page*/
 
 /*header*/
+
+.header #mobile{
+    display: none;
+    align-items: center;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -53,7 +59,11 @@ body {
     z-index: 999;
 }
 
-.header .navbar {
+#close{
+    display: none;
+}
+
+.header #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,29 +72,29 @@ body {
 
 
 
-.header .navbar li{
+.header #navbar li{
     text-decoration: none;
     list-style: none;
     padding: 0 15px;
     position: relative;
 }
 
-.header .navbar li a {
+.header #navbar li a {
     font-size: 19px;
     font-weight: 600;
     color: #222;
     text-decoration: none;
 }
 
-.header .navbar li a:hover {
+.header #navbar li a:hover {
     color: #0a8f86;
 }
 
-.header .navbar li .active{
+.header #navbar li .active{
     color: #0a8f86;
 }
 
-.header .navbar li .active::after, .header .navbar li a:hover::after{
+.header #navbar li .active::after, .header #navbar li a:hover::after{
     content: "";
     width: 30%;
     height: 3px;
@@ -100,6 +110,7 @@ body {
     font-family: serif;
     color: rgb(63, 61, 61);
 }
+
 
 
 /* First part */
@@ -615,3 +626,373 @@ body {
     padding-top: 100px;
     text-align: center;
 }
+
+
+/*media Query */
+
+
+
+
+
+
+
+
+@media (max-width:865px){
+
+    .header #navbar{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        top: 0px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #fcfcfc;
+        padding: 110px 0 0 10px;
+        box-shadow: 0 5px 8px #000;
+        transition: 0.2s;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    .header #mobile{
+        display: flex;
+        align-items: flex-start;
+        padding-right: 14%;
+    }
+    .header #mobile i {
+        color: #1A1a1a;
+        font-size: 24px;
+        padding-left:20px; 
+    }
+    
+    #close{
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+
+
+    #first-section{
+        height: 80vh;
+    }
+
+    
+    
+    #features {
+        margin: 40px 0;
+        justify-content: center;
+        
+    }
+    
+    #features .fe-box {
+        width: 140px;
+    }
+    
+    #features .fe-box i {
+        font-size: 40px;
+        color: #088178;
+        margin-bottom: 2vh;
+    }
+    
+    .fe-products {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #featured-products .fe-products .product-box {
+        width: 23%;
+        min-width: 200px;
+        margin: 5px 5vw 5px;
+        
+    }
+
+    .fe-products .product-box p  {
+        margin: 3px 0 3px 0;
+    }
+    
+
+    #featured-products .title h2 {
+        font-size: 40px;
+    }
+
+    .fe-products .product-box .des h4{
+        padding-top: 5px;
+        
+    }
+    .fe-products .product-box .des h5{
+        padding-top: 3px;
+    }
+
+    #featured-products {
+        width: 100%;
+        margin: 2vh 0;
+    }
+    
+    #featured-products .title {
+        text-align: center;
+        margin-bottom: 6vh;
+        
+    }
+
+    
+    #fe-banner {
+        width: 100%;
+        background-image: url("img/banner/b2.jpg");
+        height: 30vh;
+        margin: 3vh 0;
+    }
+
+    #fe-banner h5{
+        font-size: 20px;
+    }
+    
+    #fe-banner h3 {
+        font-size: 30px;
+    }
+
+    #products {
+        width: 100%;
+        margin: 2vh 0%;
+    }
+
+    #products .pro-header h2{
+        font-size: 45px;
+    }
+    
+    
+    .all-pro {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 30px;
+    }
+
+    #banner2 {
+        padding: 0 10px;
+    }
+    
+    .bannerbox{
+        background-size: cover;
+        width: 30%;
+        height: 15vh;
+        min-width: 150px;
+        padding: 10px;
+        margin: 5px 5px;
+    }
+    
+    .bannerbox h3{
+        font-size: 20px;
+    }
+    
+    .bannerbox h5 {
+        padding-top: 4px;
+        font-size: 15px;
+    }
+    
+    #mailpart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 20vh;
+    }
+
+    #mailpart .des h2{
+        font-size: 30px;
+    }
+
+    #mailpart .form button, #mailpart .form input {
+        height: 40px;
+    
+    }
+
+    #footer .info {
+        height: 30vh;
+    }
+}
+
+
+@media (max-width:565px){
+    #first-section {
+        padding-top: 10vh;
+        padding-bottom: 6vh;
+        height: fit-content;
+    }
+
+    #first-section h2 {
+        font-size: 45px;
+    }
+
+    #first-section h2 {
+        font-size: 45px;
+    }
+
+    #first-section p {
+        font-size: 20px;
+    }
+
+        
+#features {
+    margin: 20px 4vw 7vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#features .fe-box {
+    width: 100px;
+    display: flex;
+    padding: 10px 4px;
+    margin: 5px 10px;
+}
+
+
+#features .fe-box i {
+    font-size: 30px;
+    color: #088178;
+    margin-bottom: 2vh;
+}
+
+#features .fe-box h6 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 4px;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+    
+    
+
+.fe-products, .all-pro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#featured-products .fe-products .product-box, .all-pro .pro {
+    width: 23%;
+    min-width: 150px;
+    margin: 5px ;
+    
+}
+
+
+ .fe-products .product-box p , .all-pro .pro p {
+    font-size: 16px;
+    margin: 3px 0 3px 0;
+}
+
+ .fe-products .product-box .des i, .all-pro .pro .review i  {
+    padding-top: 2px;
+    font-size: 10px;
+
+}
+
+
+.fe-products .product-box .des h5, .all-pro .pro h5 {
+    padding-top: 5px;
+    font-size: 20px;
+}  
+
+.fe-products .product-box .des h4, .all-pro .pro h4{
+    padding-top: 8px;
+    font-size: 22px;
+}
+
+.fe-products .product-box .cart, .all-pro .pro .cart {
+    width: 30px;
+    height: 30px;
+    border: 6px solid #cce7d0;
+    background-color: none;
+}
+
+
+
+#mailpart {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+#mailpart .des{
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+}
+
+
+
+#mailpart .form {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%
+    
+
+}
+
+#mailpart .form input{
+    height: 35px;
+    width: 70%;
+    font-size: 14px;
+}
+
+#mailpart .form button{
+    height: 35px;
+    width: 30%;
+    border: 0;
+    list-style: none;
+    border-radius: 15px;
+    border-top-left-radius:0 ;
+    border-bottom-left-radius:0 ;
+    background-color: #206b5bfa;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+
+.bannerbox{
+    background-size: cover;
+    width: 30%;
+    height: 10vh;
+    min-width: 100px;
+    padding: 10px;
+    margin: 5px 5px;
+}
+
+.bannerbox h3{
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.bannerbox h5 {
+    padding-top: 20px;
+    font-size: 17px;
+}
+
+    .copyright p {
+        margin-top: 5vh;
+    }
+
+}
+
